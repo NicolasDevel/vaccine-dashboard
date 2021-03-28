@@ -1,0 +1,30 @@
+h1, h2, h3, h4, h5, h6  {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h2 {
+    font-family: 'noto-bold';
+    font-size: 1.125rem;
+    line-height: 1.318rem;
+}
+
+h5 {
+    font-family: 'noto-thin';
+    font-size: 1rem;
+    line-height: 1.172rem;
+}
+
+.text-red{
+    color: var(--third);
+}
+
+.text-blue{
+    color: var(--primary);
+}
+
+.text-violet{
+    color: var(--secondary);
+}

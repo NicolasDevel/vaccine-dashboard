@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './pages/home/Home';
 import reportWebVitals from './reportWebVitals';
 
 //Theme variable
@@ -7,12 +8,7 @@ import './theme/main.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
-      <h1>H1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <p>parrafo</p>
-    </div>
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
