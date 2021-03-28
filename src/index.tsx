@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//Theme variable
+import './theme/main.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div>
+      <h1>H1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <p>parrafo</p>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
