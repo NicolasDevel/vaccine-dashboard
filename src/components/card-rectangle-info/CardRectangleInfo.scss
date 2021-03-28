@@ -1,0 +1,31 @@
+.container{
+    width: 23.438rem;
+    height: 6.813rem;
+    border-radius: 2.813rem;
+    .position{
+        position: relative;
+        top: 1.375rem;
+        left: 1.188rem;
+        display: flex;
+        flex-direction: row;
+        .container-text{
+            margin-top: 0.125rem;
+            margin-left: 0.875rem;
+            .subtitle-text{
+                margin-top: 0.813rem;
+            }
+        }
+    }
+}
+
+.background-red{
+    background-color: var(--third-light);
+}
+
+.background-blue{
+    background-color: var(--primary-light);
+}
+
+.background-violet{
+    background-color: var(--secondary-light);
+}
