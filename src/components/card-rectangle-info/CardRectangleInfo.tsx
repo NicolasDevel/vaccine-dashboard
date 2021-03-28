@@ -1,17 +1,18 @@
 import Circle from '../circle/Circle';
+import {Title , Subtitle } from '../titles/Titles';
 import './CardRectangleInfo.scss';
-import Title from '../title/Title';
 
 import {ICardRectangleInfoComponent} from './Interface';
 
 
 const CardRectangleInfo = (props:ICardRectangleInfoComponent) => {
-    return <div className={`container background-${props.color}`}>
+    const { color, subtitle, title} = props;
+    return <div className={`container background-${color}`}>
         <div className={'position'}>
-            <Circle color={props.color}/> 
+            <Circle color={color}/> 
             <div className={'container-text'}>
-                <Title text={'test'} color={props.color}/>
-                <div>aa</div>
+                <Title text={title} color={color} />
+                <Subtitle text={subtitle} color={color} styles={'subtitle-text'}/>
             </div>
         </div>
     </div>
