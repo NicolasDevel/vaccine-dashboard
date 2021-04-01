@@ -1,6 +1,12 @@
 .circle{
-    height: 4.063rem;
-    width: 4.063rem;
+    &.sm{
+        height: 1.563rem;
+        width: 1.563rem;
+    }
+    &.bg{
+        height: 4.063rem;
+        width: 4.063rem;
+    }
     border-radius: 50%;
 }
 

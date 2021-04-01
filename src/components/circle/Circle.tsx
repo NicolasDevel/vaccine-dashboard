@@ -3,7 +3,11 @@ import {ICircle} from './Interface';
 import './Circle.scss';
 
 const Circle = (props:ICircle) =>{
-    return <div className={`circle ${props.color}`} />
+    const {
+        color,
+        size = 'bg',
+    } = props;
+    return <div className={`circle ${size} ${color}`} />
 }
 
 export default Circle;
