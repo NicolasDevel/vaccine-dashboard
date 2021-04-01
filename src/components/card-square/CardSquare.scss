@@ -1,0 +1,41 @@
+.card-square{
+    width: 25.625rem;
+    height: 30rem;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+
+    &.decorarion-card-blue{
+        border : 1px solid var(--primary-light);
+        box-shadow: 0px 0px 8px var(--primary-light);
+    }
+    &.decorarion-card-violet{
+        border : 1px solid var(--secondary-light);
+        box-shadow: 0px 0px 8px var(--secondary-light);
+    }
+    &.decorarion-card-red{
+        border : 1px solid var(--third-light);
+        box-shadow: 0px 0px 8px var(--third-light);
+    }
+
+    .header{
+        position: relative;
+        top: 1.75rem;
+        left: 1.688rem;
+    }
+
+    .footer{
+        &.none{
+            display: none;
+        }
+            width: 21.625rem;
+            margin: auto;
+            border-top : 1px solid var(--line);
+        .text-footer{
+            display: flex;
+            margin-top: 1.038rem;
+            .margin{
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
