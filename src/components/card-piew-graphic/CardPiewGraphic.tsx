@@ -6,11 +6,10 @@ import {PiewGraphic} from "../piew-graphic/PiewGraphic"
 
 export const CardPiewGraphic: React.FC<ICardSquare> = (props)=>{
     const {data, graphicColor} = props;
-
     return <CardSquare {...props}> 
                 <PiewGraphic 
-                    data={props.data} 
-                    color={graphicColor == 'blue' ? EColor.primary : graphicColor === 'violet' ? EColor.secondary : EColor.third} 
+                    data={data} 
+                    color={graphicColor === 'blue' ? EColor.primary : graphicColor === 'violet' ? EColor.secondary : EColor.third} 
                 />
             </CardSquare>
 }

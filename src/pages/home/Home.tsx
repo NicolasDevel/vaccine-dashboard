@@ -1,7 +1,6 @@
 import React from 'react';
+import {CardList} from '../../components/card-list/CardList';
 import {CardPiewGraphic} from '../../components/card-piew-graphic/CardPiewGraphic';
-import CardRectangleInfo from '../../components/card-rectangle-info/CardRectangleInfo';
-import {EColor} from '../../models/enum';
 
 class Home extends React.Component {
     data = [
@@ -10,6 +9,12 @@ class Home extends React.Component {
         { name: "Group C", value: 300 },
         { name: "Group D", value: 200 }
     ];
+    list = [
+        {title:'Uno',value:2450},
+        {title:'Dos',value:2450},
+        {title:'Tres',value:2450},
+        {title:'Cuatro',value:2450},
+    ]
     render(){
         return <div>
             <CardPiewGraphic
@@ -20,6 +25,15 @@ class Home extends React.Component {
                 textFooter='test footer' 
                 borderColor='violet' 
                 data={this.data}
+            />
+            <CardList 
+                graphicColor='violet'
+                textColor='blue' 
+                title='Lista' 
+                footer={false} 
+                borderColor='violet' 
+                data={this.list}
+                overflow={true}
             />
         </div>
         

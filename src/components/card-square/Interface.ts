@@ -8,4 +8,6 @@ export interface ICardSquare {
     borderColor :   color,
     footer?     :   boolean,
     textFooter? :   string,
+    clases?     :   string,
+    overflow?   :   boolean,
 }
