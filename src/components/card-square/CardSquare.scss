@@ -3,6 +3,13 @@
     height: 30rem;
     box-sizing: border-box;
     border-radius: 1.5rem;
+    &.over-flow{
+        overflow:auto;
+    }
+    &.over-flow::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
 
     &.decorarion-card-blue{
         border : 1px solid var(--primary-light);
