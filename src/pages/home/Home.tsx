@@ -2,8 +2,9 @@ import React from "react";
 import { CardList } from "../../components/card-list/CardList";
 import { CardPiewGraphic } from "../../components/card-piew-graphic/CardPiewGraphic";
 import "./home.scss";
+import store, {Props} from './store';
 
-class Home extends React.Component {
+class Home extends React.Component<Props> {
   data = [
     { name: "2-Abril", value: 8677 },
     { name: "3-Abril", value: 3278 },
@@ -18,7 +19,16 @@ class Home extends React.Component {
     { title: "Cundinamarca", value: 112627 },
     { title: "barranquilla", value: 106335 },
   ];
+
+  componentDidMount() {
+    this.props.getVaccinateCountry();
+  }
+
   render() {
+    const filter = this.props.vaccinateCountry.find(country=> {
+      return country.country === 'Colombia'
+    })
+    console.log(filter)
     return (
       <div className="page-home">
         <div className="first-row">
@@ -44,7 +54,7 @@ class Home extends React.Component {
               data={[]}
             />
           </div>
-          <div className="">
+          <div>
             <CardList
               graphicColor="violet"
               textColor="blue"
@@ -61,4 +71,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default store(Home);
