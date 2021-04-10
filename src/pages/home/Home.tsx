@@ -44,7 +44,7 @@ class Home extends React.Component {
               data={[]}
             />
           </div>
-          <div className="">
+          <div>
             <CardList
               graphicColor="violet"
               textColor="blue"
