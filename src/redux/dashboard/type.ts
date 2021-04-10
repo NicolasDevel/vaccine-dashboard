@@ -7,7 +7,7 @@ export enum ActionKeys {
 
 export interface setDataVaccinateCountry {
     type                :   ActionKeys.SET_DATA_VACCINATE_COUNTRY,
-    vaccinateCountry    :   IVaccinateCountry
+    vaccinateCountry    :   IVaccinateCountry []
 }
 
 export interface setError {

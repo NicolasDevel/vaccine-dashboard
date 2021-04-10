@@ -2,16 +2,12 @@ import {IVaccinateCountry} from "../../models/vaccinate";
 import {ActionKeys, DashboardActions} from "./type";
 
 interface DashboardState {
-    vaccinateCountry    : IVaccinateCountry,
+    vaccinateCountry    : IVaccinateCountry [],
     error?              : string
 }
 
 const initialState:DashboardState = {
-    vaccinateCountry: {
-        country:'',
-        iso_code:'data',
-        data:[],
-    },
+    vaccinateCountry: [],
     error:'',
 }
 

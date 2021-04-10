@@ -8,4 +8,4 @@ class Client {
 
 }
 
-export default new Client;
+export default new Client();

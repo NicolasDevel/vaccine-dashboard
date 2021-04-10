@@ -12,10 +12,11 @@ export const getVaccinateCountry = ():ThunkAction<Promise<any>, RootState, {}, D
         }catch (err) {
             dispatch(failedData(err));
         }
+
     }
 }
 
-export const getVaccinateCountrySuccess = (vaccinateCountry: IVaccinateCountry):setDataVaccinateCountry => ({
+export const getVaccinateCountrySuccess = (vaccinateCountry: IVaccinateCountry[]):setDataVaccinateCountry => ({
     type: ActionKeys.SET_DATA_VACCINATE_COUNTRY,
     vaccinateCountry
 });
