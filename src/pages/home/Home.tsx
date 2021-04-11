@@ -31,6 +31,7 @@ class Home extends React.Component<Props> {
     console.log(filter)
     return (
       <div className="page-home">
+        <div><h2>Hola soy un titulo que debo cambiar</h2></div>
         <div className="first-row">
           <div className="one">
             <CardPiewGraphic
