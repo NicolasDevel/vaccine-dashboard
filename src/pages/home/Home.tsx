@@ -68,10 +68,10 @@ class Home extends React.Component<Props> {
             />
           </div>
         </div>
-        <CardRectangle borderColor={'red'} size={'s'} />
-        <CardRectangle borderColor={'blue'} size={'xs'} />
-        <CardRectangle borderColor={'violet'} size={'l'} backgroundColor={'violet'}/>
-        <CardRectangle borderColor={'violet'} size={'xl'} />
+        <CardRectangle borderColor={'blue'} size={'xs'} colorCircle={'blue'} sizeCircle={'sm'}/>
+        <CardRectangle borderColor={'red'} size={'s'} colorCircle={'red'} sizeCircle={'sm'}/>
+        <CardRectangle borderColor={'violet'} size={'l'} backgroundColor={'violet'} colorCircle={'violet'} sizeCircle={'bg'}/>
+        <CardRectangle borderColor={'violet'} size={'xl'} colorCircle={'violet'} sizeCircle={'xl'}/>
       </div>
 
     );

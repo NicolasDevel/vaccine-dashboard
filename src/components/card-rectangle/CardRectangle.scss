@@ -1,6 +1,7 @@
 .card-rectangle{
   height: 5rem;
   border-radius: 32px;
+  display: flex;
   &.xs{
     width: 7.625rem;
   }
@@ -17,15 +18,15 @@
   }
   &.border-blue{
     border : 1px solid var(--primary-light);
-    box-shadow: 0px 0px 8px var(--primary-light);
+    box-shadow: 0 0 8px var(--primary-light);
   }
   &.border-violet{
     border : 1px solid var(--secondary-light);
-    box-shadow: 0px 0px 8px var(--secondary-light);
+    box-shadow: 0 0 8 var(--secondary-light);
   }
   &.border-red{
     border : 1px solid var(--third-light);
-    box-shadow: 0px 0px 8px var(--third-light);
+    box-shadow: 0 0 8px var(--third-light);
   }
   &.background-blue{
     background-color: var(--primary-light);
@@ -35,5 +36,23 @@
   }
   &.background-red{
     background-color: var(--third-light-light);
+  }
+
+  .container{
+    display: flex;
+    margin-bottom: auto;
+    margin-top: auto;
+    &.xs{
+      margin-left: 1.438rem;
+    }
+    &.s{
+      margin-left: 1.688rem;
+    }
+    &.l{
+      margin-left: 1.625rem;
+    }
+    &.xl{
+      margin-left: 1.313rem;
+    }
   }
 }

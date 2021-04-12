@@ -9,7 +9,7 @@ import './CardList.scss';
 export const CardList: React.FC<ICardSquare> = (props)=>{
     const {data} = props;
     return <CardSquare {...props}> 
-                <div className="container">
+                <div className="container-cl">
                     {data.map((item:any, index)=>{
                         return <div key={index}>
                             <div className={`item ${index < data.length-1 ? 'border-bottom':''}`}>

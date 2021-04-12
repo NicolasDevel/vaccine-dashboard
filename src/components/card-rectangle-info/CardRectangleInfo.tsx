@@ -7,7 +7,7 @@ import {ICardRectangleInfoComponent} from './Interface';
 
 const CardRectangleInfo = (props:ICardRectangleInfoComponent) => {
     const { color, subtitle, title} = props;
-    return <div className={`container background-${color}`}>
+    return <div className={`container-crf background-${color}`}>
         <div className={'position'}>
             <Circle color={color}/> 
             <div className={'container-text'}>
