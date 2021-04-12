@@ -1,0 +1,39 @@
+.card-rectangle{
+  height: 5rem;
+  border-radius: 32px;
+  &.xs{
+    width: 7.625rem;
+  }
+  &.s{
+    width: 11.563rem;
+  }
+  &.l{
+    width: 25.625rem;
+    height: 7.875rem;
+  }
+  &.xl{
+    width: 55.25rem;
+    height: 9.684rem;
+  }
+  &.border-blue{
+    border : 1px solid var(--primary-light);
+    box-shadow: 0px 0px 8px var(--primary-light);
+  }
+  &.border-violet{
+    border : 1px solid var(--secondary-light);
+    box-shadow: 0px 0px 8px var(--secondary-light);
+  }
+  &.border-red{
+    border : 1px solid var(--third-light);
+    box-shadow: 0px 0px 8px var(--third-light);
+  }
+  &.background-blue{
+    background-color: var(--primary-light);
+  }
+  &.background-violet{
+    background-color: var(--secondary-light);
+  }
+  &.background-red{
+    background-color: var(--third-light-light);
+  }
+}
