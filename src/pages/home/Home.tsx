@@ -3,6 +3,7 @@ import { CardList } from "../../components/card-list/CardList";
 import { CardPiewGraphic } from "../../components/card-piew-graphic/CardPiewGraphic";
 import "./home.scss";
 import store, {Props} from './store';
+import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
 
 class Home extends React.Component<Props> {
   data = [
@@ -67,7 +68,12 @@ class Home extends React.Component<Props> {
             />
           </div>
         </div>
+        <CardRectangle borderColor={'red'} size={'s'} />
+        <CardRectangle borderColor={'blue'} size={'xs'} />
+        <CardRectangle borderColor={'violet'} size={'l'} backgroundColor={'violet'}/>
+        <CardRectangle borderColor={'violet'} size={'xl'} />
       </div>
+
     );
   }
 }
