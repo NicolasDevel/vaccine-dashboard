@@ -5,6 +5,7 @@ import "./home.scss";
 import store, {Props} from './store';
 import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
 import { CardSmall } from '../../components/card-xs/CardSmall';
+import { CardRectangleMedium } from '../../components/card-rectangle-medium/CardRectangleMedium';
 
 class Home extends React.Component<Props> {
   data = [
@@ -71,9 +72,9 @@ class Home extends React.Component<Props> {
         </div>
         <CardSmall cardSquare={{borderColor: 'blue', size: 'xs', colorCircle:'blue', sizeCircle:'sm'}} text={'prueba'}/>
         <CardSmall cardSquare={{borderColor: 'red', size: 's', colorCircle:'red', sizeCircle:'sm'}} text={'prueba'}/>
+        <CardRectangleMedium cardSquare={{borderColor: 'violet', size: 'l', colorCircle:'violet', sizeCircle:'bg', backgroundColor:'violet'}} title={'item titulo'} subTItle={'61.232'}/>
 
 
-        <CardRectangle borderColor={'violet'} size={'l'} backgroundColor={'violet'} colorCircle={'violet'} sizeCircle={'bg'}/>
         <CardRectangle borderColor={'violet'} size={'xl'} colorCircle={'violet'} sizeCircle={'xl'}/>
       </div>
 
