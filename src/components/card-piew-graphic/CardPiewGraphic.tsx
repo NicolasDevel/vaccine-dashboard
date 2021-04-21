@@ -12,7 +12,7 @@ export const CardPiewGraphic: React.FC<ICardSquare> = (props)=>{
                 <PiewGraphic
                     data={data}
                     keyData={keyDate}
-                    keyDate={keyDate}
+                    keyDate={keyData}
                     color={graphicColor === 'blue' ? EColor.primary : graphicColor === 'violet' ? EColor.secondary : EColor.third}
                 />
             </CardSquare>
