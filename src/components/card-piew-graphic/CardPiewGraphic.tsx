@@ -5,11 +5,15 @@ import {ICardSquare} from "../card-square/Interface"
 import {PiewGraphic} from "../piew-graphic/PiewGraphic"
 
 export const CardPiewGraphic: React.FC<ICardSquare> = (props)=>{
-    const {data, graphicColor} = props;
-    return <CardSquare {...props}> 
-                <PiewGraphic 
-                    data={data} 
-                    color={graphicColor === 'blue' ? EColor.primary : graphicColor === 'violet' ? EColor.secondary : EColor.third} 
+
+    const {data, graphicColor, keyData, keyDate} = props;
+
+    return <CardSquare {...props}>
+                <PiewGraphic
+                    data={data}
+                    keyData={keyDate}
+                    keyDate={keyDate}
+                    color={graphicColor === 'blue' ? EColor.primary : graphicColor === 'violet' ? EColor.secondary : EColor.third}
                 />
             </CardSquare>
 }

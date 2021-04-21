@@ -9,7 +9,6 @@ export const CardRectangle:React.FC<ISquareCard> = ({children,backgroundColor='w
                 <Circle size={sizeCircle} color={colorCircle}/>
             </section>
             <section className='body-container'>
-                testo de prueba
                 {children}
             </section>
         </div>
