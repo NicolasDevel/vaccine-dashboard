@@ -7,6 +7,10 @@ import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
 import {CardSmall} from '../../components/card-xs/CardSmall';
 import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRectangleMedium';
 
+import {AreaChart, Area, XAxis, YAxis, Tooltip} from 'recharts';
+
+import {Subtitle} from "../../components/titles/Titles";
+
 class Home extends React.Component<Props> {
 
     list = [
@@ -25,6 +29,9 @@ class Home extends React.Component<Props> {
         const filter = this.props.vaccinateCountry?.filter(country => {
             return country.country === 'Colombia'
         })
+
+        console.log(filter[0]?.data)
+
         return (
             <div className="page-home">
                 <div><h2>Hola soy un titulo que debo cambiar</h2></div>
@@ -36,7 +43,7 @@ class Home extends React.Component<Props> {
                             textColor="blue"
                             title="Distribución de vacunas durante los utlimos 5 dias"
                             footer={true}
-                            textFooter={`Total de vacunas ${filter[0]?.data[filter[0]?.data?.length-1].total_vaccinations}`}
+                            textFooter={`Total de vacunas ${filter[0]?.data[filter[0]?.data?.length - 1].total_vaccinations}`}
                             borderColor="violet"
                             data={filter[0]?.data.slice(Math.max(filter[0]?.data.length - 6, 1))}
                         />
@@ -64,6 +71,60 @@ class Home extends React.Component<Props> {
                         />
                     </div>
                 </div>
+
+                <div className={'graficas-rectangulares'}>
+                    <div className={'grafica-uno'}>
+                        <Subtitle text={'Vacunados vs vacunados totalmente'} color={'blue'} styles={'margin-bo'}/>
+
+                        <AreaChart width={730} height={250} data={filter[0]?.data}
+                                   margin={{top: 10, right: 10, left: 22, bottom: 10}}>
+                            <defs>
+                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                                </linearGradient>
+                                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                                </linearGradient>
+                            </defs>
+                            <XAxis dataKey="date"/>
+                            <YAxis/>
+
+                            <Tooltip/>
+                            <Area type="monotone" dataKey="people_fully_vaccinated" stroke="#8884d8" fillOpacity={1}
+                                  fill="url(#colorUv)"/>
+                            <Area type="monotone" dataKey="total_vaccinations" stroke="#82ca9d" fillOpacity={1}
+                                  fill="url(#colorPv)"/>
+                        </AreaChart>
+                    </div>
+
+                    <div className={'grafica-uno'}>
+                        <Subtitle text={'Vacunados vs vacunados totalmente'} color={'blue'} styles={'margin-bo'}/>
+
+                        <AreaChart width={730} height={250} data={filter[0]?.data}
+                                   margin={{top: 10, right: 10, left: 22, bottom: 10}}>
+                            <defs>
+                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+                                </linearGradient>
+                                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+                                    <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+                                </linearGradient>
+                            </defs>
+                            <XAxis dataKey="date"/>
+                            <YAxis/>
+
+                            <Tooltip/>
+                            <Area type="monotone" dataKey="daily_vaccinations" stroke="#82ca9d" fillOpacity={1}
+                                  fill="url(#colorPv)"/>
+                        </AreaChart>
+                    </div>
+                </div>
+
+
                 <CardSmall cardSquare={{borderColor: 'blue', size: 'xs', colorCircle: 'blue', sizeCircle: 'sm'}}
                            text={'prueba'}/>
                 <CardSmall cardSquare={{borderColor: 'red', size: 's', colorCircle: 'red', sizeCircle: 'sm'}}
