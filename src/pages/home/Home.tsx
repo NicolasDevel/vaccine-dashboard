@@ -3,9 +3,9 @@ import {CardList} from "../../components/card-list/CardList";
 import {CardPiewGraphic} from "../../components/card-piew-graphic/CardPiewGraphic";
 import "./home.scss";
 import store, {Props} from './store';
-import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
-import {CardSmall} from '../../components/card-xs/CardSmall';
-import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRectangleMedium';
+// import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
+// import {CardSmall} from '../../components/card-xs/CardSmall';
+// import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRectangleMedium';
 
 import {AreaChart, Area, XAxis, YAxis, Tooltip} from 'recharts';
 
