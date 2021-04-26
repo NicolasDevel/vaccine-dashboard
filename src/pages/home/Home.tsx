@@ -14,11 +14,11 @@ import {Subtitle, Title} from "../../components/titles/Titles";
 class Home extends React.Component<Props> {
 
     list = [
-        {title: "Bogota", value: 669076},
-        {title: "Antioquia", value: 393199},
-        {title: "Valle", value: 212816},
-        {title: "Cundinamarca", value: 112627},
-        {title: "barranquilla", value: 106335},
+        {title: "Bogota", value: 770603},
+        {title: "Antioquia", value: 458194},
+        {title: "Valle", value: 233192},
+        {title: "Barranquilla", value: 144935},
+        {title: "Cundinamarca", value: 123706},
     ];
 
     componentDidMount() {
