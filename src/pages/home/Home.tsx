@@ -100,7 +100,7 @@ class Home extends React.Component<Props> {
                     </div>
 
                     <div className={'grafica-uno'}>
-                        <Subtitle text={'Vacunados vs vacunados totalmente'} color={'blue'} styles={'margin-bo'}/>
+                        <Subtitle text={'Historico de vacunados'} color={'blue'} styles={'margin-bo'}/>
 
                         <AreaChart width={730} height={250} data={filter[0]?.data}
                                    margin={{top: 10, right: 10, left: 22, bottom: 10}}>
