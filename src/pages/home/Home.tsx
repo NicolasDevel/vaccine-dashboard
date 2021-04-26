@@ -9,7 +9,7 @@ import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRe
 
 import {AreaChart, Area, XAxis, YAxis, Tooltip} from 'recharts';
 
-import {Subtitle} from "../../components/titles/Titles";
+import {Subtitle, Title} from "../../components/titles/Titles";
 
 class Home extends React.Component<Props> {
 
@@ -34,7 +34,7 @@ class Home extends React.Component<Props> {
 
         return (
             <div className="page-home">
-                <div><h2>Hola soy un titulo que debo cambiar</h2></div>
+                <div ><Title text={'Datos actualizados al 24 de Abril 2021'} color={'blue'}/></div>
                 <div className="first-row">
                     <div className="one">
                         <CardPiewGraphic
@@ -52,9 +52,9 @@ class Home extends React.Component<Props> {
                         <CardPiewGraphic
                             graphicColor="violet"
                             textColor="blue"
-                            title="Ucis durante los ultimos 5 dias"
+                            title="Porcentaje por dia de semana"
                             footer={true}
-                            textFooter="Ocupacion de Ucis"
+                            textFooter="Distribucciion de vacunas por dia de la semana"
                             borderColor="violet"
                             data={[]}
                         />
@@ -125,20 +125,7 @@ class Home extends React.Component<Props> {
                 </div>
 
 
-                <CardSmall cardSquare={{borderColor: 'blue', size: 'xs', colorCircle: 'blue', sizeCircle: 'sm'}}
-                           text={'prueba'}/>
-                <CardSmall cardSquare={{borderColor: 'red', size: 's', colorCircle: 'red', sizeCircle: 'sm'}}
-                           text={'prueba'}/>
-                <CardRectangleMedium cardSquare={{
-                    borderColor: 'violet',
-                    size: 'l',
-                    colorCircle: 'violet',
-                    sizeCircle: 'bg',
-                    backgroundColor: 'violet'
-                }} title={'item titulo'} subTItle={'61.232'}/>
 
-
-                <CardRectangle borderColor={'violet'} size={'xl'} colorCircle={'violet'} sizeCircle={'xl'}/>
             </div>
 
         );
