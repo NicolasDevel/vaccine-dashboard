@@ -32,11 +32,10 @@ class Home extends React.Component<Props> {
             return country.country === 'Colombia'
         })
         const week = [...GroupByDayWeek(filter[0]!?.data,'date','daily_vaccinations')!]
-        // const average = [...AverageAccumulate(filter[0]!?.data,'daily_vaccinations')];
-        console.log(typeof AverageAccumulate(filter[0]!?.data,'daily_vaccinations'));
+
         return (
             <div className="page-home">
-                <div ><Title text={'Datos actualizados al 24 de Abril 2021'} color={'blue'}/></div>
+                <div ><Title text={`Datos actualizados al ${new Date(filter[0]?.data[filter[0]?.data.length-1].date).toLocaleDateString("es-ES")}`} color={'blue'}/></div>
                 <div className="first-row">
                     <div className="one">
                         <CardPiewGraphic
