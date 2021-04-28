@@ -7,10 +7,11 @@ import store, {Props} from './store';
 // import {CardSmall} from '../../components/card-xs/CardSmall';
 // import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRectangleMedium';
 
-import {AreaChart, Area, XAxis, YAxis, Tooltip} from 'recharts';
+import {AreaChart, Area, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 
 import {Subtitle, Title} from "../../components/titles/Titles";
 import { GroupByDayWeek } from "../../utils/Date";
+import { AverageAccumulate } from "../../utils/Statics";
 
 class Home extends React.Component<Props> {
 
@@ -31,7 +32,8 @@ class Home extends React.Component<Props> {
             return country.country === 'Colombia'
         })
         const week = [...GroupByDayWeek(filter[0]!?.data,'date','daily_vaccinations')!]
-
+        // const average = [...AverageAccumulate(filter[0]!?.data,'daily_vaccinations')];
+        console.log(typeof AverageAccumulate(filter[0]!?.data,'daily_vaccinations'));
         return (
             <div className="page-home">
                 <div ><Title text={'Datos actualizados al 24 de Abril 2021'} color={'blue'}/></div>
@@ -80,6 +82,7 @@ class Home extends React.Component<Props> {
 
                         <AreaChart width={730} height={250} data={filter[0]?.data}
                                    margin={{top: 10, right: 10, left: 22, bottom: 10}}>
+                            <Legend verticalAlign="top" height={36}/>
                             <defs>
                                 <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                                     <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -102,16 +105,14 @@ class Home extends React.Component<Props> {
                     </div>
 
                     <div className={'grafica-uno'}>
-                        <Subtitle text={'Historico de vacunados'} color={'blue'} styles={'margin-bo'}/>
+                        <Subtitle text={'Historico de vacunados vs Promedio Acumulado'} color={'blue'} styles={'margin-bo'}/>
 
-                        <AreaChart width={730} height={250} data={filter[0]?.data}
+                        <AreaChart width={730} height={250} data={AverageAccumulate(filter[0]!?.data,'daily_vaccinations')}
                                    margin={{top: 10, right: 10, left: 22, bottom: 10}}>
+                            <Legend verticalAlign="top" height={36}/>
                             <defs>
-                                <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-                                </linearGradient>
-                                <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+
+                                <linearGradient id="colorSv" x1="0" y1="0" x2="0" y2="1">
                                     <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
                                     <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
                                 </linearGradient>
@@ -121,7 +122,8 @@ class Home extends React.Component<Props> {
 
                             <Tooltip/>
                             <Area type="monotone" dataKey="daily_vaccinations" stroke="#82ca9d" fillOpacity={1}
-                                  fill="url(#colorPv)"/>
+                                  fill="url(#colorSv)"/>
+                            <Area type="monotone" dataKey="average" stroke="#ED756A" fillOpacity={0}/>
                         </AreaChart>
                     </div>
                 </div>
