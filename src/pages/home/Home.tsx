@@ -3,37 +3,40 @@ import {CardList} from "../../components/card-list/CardList";
 import {CardPiewGraphic} from "../../components/card-piew-graphic/CardPiewGraphic";
 import "./home.scss";
 import store, {Props} from './store';
-// import {CardRectangle} from "../../components/card-rectangle/CardRectangle";
-// import {CardSmall} from '../../components/card-xs/CardSmall';
-// import {CardRectangleMedium} from '../../components/card-rectangle-medium/CardRectangleMedium';
 
 import {AreaChart, Area, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 
 import {Subtitle, Title} from "../../components/titles/Titles";
 import { GroupByDayWeek } from "../../utils/Date";
 import { AverageAccumulate } from "../../utils/Statics";
+import LoadingSpinner from "../../components/loading-spinner/LoadingSpinner";
 
 class Home extends React.Component<Props> {
 
-    list = [
-        {title: "Bogota", value: 770603},
-        {title: "Antioquia", value: 458194},
-        {title: "Valle", value: 233192},
-        {title: "Barranquilla", value: 144935},
-        {title: "Cundinamarca", value: 123706},
-    ];
+    state = {
+        list : [
+            {title: "Bogota", value: 770603},
+            {title: "Antioquia", value: 458194},
+            {title: "Valle", value: 233192},
+            {title: "Barranquilla", value: 144935},
+            {title: "Cundinamarca", value: 123706},
+        ]
+    }
+
 
     componentDidMount() {
         this.props.getVaccinateCountry();
     }
 
     render() {
+        const { list } = this.state;
         const filter = this.props.vaccinateCountry?.filter(country => {
             return country.country === 'Colombia'
         })
         const week = [...GroupByDayWeek(filter[0]!?.data,'date','daily_vaccinations')!]
 
-        return (
+        return <>
+            { !filter && <LoadingSpinner />}
             <div className="page-home">
                 <div ><Title text={`Datos actualizados al ${new Date(filter[0]?.data[filter[0]?.data.length-1].date).toLocaleDateString("es-ES")}`} color={'blue'}/></div>
                 <div className="first-row">
@@ -69,7 +72,7 @@ class Home extends React.Component<Props> {
                             title="Top Casos acumulados por departamento"
                             footer={false}
                             borderColor="violet"
-                            data={this.list}
+                            data={list}
                             overflow={true}
                         />
                     </div>
@@ -130,8 +133,11 @@ class Home extends React.Component<Props> {
 
 
             </div>
+        </>
 
-        );
+
+
+
     }
 }
 
