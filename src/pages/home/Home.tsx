@@ -10,6 +10,7 @@ import store, {Props} from './store';
 import {AreaChart, Area, XAxis, YAxis, Tooltip} from 'recharts';
 
 import {Subtitle, Title} from "../../components/titles/Titles";
+import { GroupByDayWeek } from "../../utils/Date";
 
 class Home extends React.Component<Props> {
 
@@ -29,8 +30,7 @@ class Home extends React.Component<Props> {
         const filter = this.props.vaccinateCountry?.filter(country => {
             return country.country === 'Colombia'
         })
-
-        console.log(filter[0]?.data)
+        const week = [...GroupByDayWeek(filter[0]!?.data,'date','daily_vaccinations')!]
 
         return (
             <div className="page-home">
@@ -48,15 +48,17 @@ class Home extends React.Component<Props> {
                             data={filter[0]?.data.slice(Math.max(filter[0]?.data.length - 6, 1))}
                         />
                     </div>
+
                     <div className="one">
                         <CardPiewGraphic
+                            keyDate={'value'}
                             graphicColor="violet"
                             textColor="blue"
                             title="Porcentaje por dia de semana"
                             footer={true}
                             textFooter="Distribucciion de vacunas por dia de la semana"
                             borderColor="violet"
-                            data={[]}
+                            data={week}
                         />
                     </div>
                     <div>

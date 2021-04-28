@@ -7,7 +7,6 @@ import {PiewGraphic} from "../piew-graphic/PiewGraphic"
 export const CardPiewGraphic: React.FC<ICardSquare> = (props)=>{
 
     const {data, graphicColor, keyData, keyDate} = props;
-
     return <CardSquare {...props}>
                 <PiewGraphic
                     data={data}

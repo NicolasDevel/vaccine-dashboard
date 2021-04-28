@@ -76,7 +76,7 @@ const renderActiveShape = (props: any) => {
 
 export const PiewGraphic = (props: IPiewGraphic) => {
 
-    const {data, keyData} = props;
+    const {data, keyData='value', color} = props;
 
     const [activeIndex, setActiveIndex] = useState(0);
     const onPieEnter = useCallback(
@@ -85,7 +85,6 @@ export const PiewGraphic = (props: IPiewGraphic) => {
         },
         [setActiveIndex]
     );
-
     return (
         <PieChart width={400} height={400}>
             <Pie
@@ -96,8 +95,8 @@ export const PiewGraphic = (props: IPiewGraphic) => {
                 cy={200}
                 innerRadius={60}
                 outerRadius={80}
-                fill={props.color}
-                dataKey={keyData!}
+                fill={color}
+                dataKey={keyData}
                 onMouseEnter={onPieEnter}
             />
         </PieChart>
