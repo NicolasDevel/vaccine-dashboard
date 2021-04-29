@@ -1,4 +1,5 @@
 .page-home{
+    height: 100vh;
     padding: 30px;
     .first-row{
         display: flex;
@@ -10,6 +11,7 @@
         display: flex;
         flex-direction: row;
         margin-top: 40px;
+        margin-bottom: 110px;
         .grafica-uno{
             width: min-content;
             border: 1px solid var(--secondary-light);
@@ -21,6 +23,48 @@
                 text-align: center;
                 margin-bottom: 10px;
                 margin-top: 15px;
+            }
+        }
+    }
+}
+
+.page-home-second-part{
+    margin: auto 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    div img {
+        height: 900px;
+    }
+    .sections{
+        margin: 0 auto;
+        .Conclusion{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        &.right{
+            display: flex;
+            flex-direction: column;
+            .textTItle{
+                text-align: center;
+            }
+            .triptico{
+                margin-top: auto;
+                margin-bottom: auto;
+                .uno, .dos, .tres{
+                    margin-bottom: 25px;
+                    max-width: min-content;
+                }
+                .uno{
+                    margin-right: auto;
+                }
+                .dos{
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+                .tres{
+                    margin-left: auto;
+                }
             }
         }
     }
