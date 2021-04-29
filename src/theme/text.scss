@@ -1,0 +1,48 @@
+h1, h2, h3, h4, h5, h6, p  {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    &.text-blue{
+        color: var(--primary);
+    }
+    
+    &.text-violet{
+        color: var(--secondary);
+    }
+    
+    &.text-red{
+        color: var(--third);
+    }
+    
+    &.text-disabled{
+        color: var(--disabled-text)
+    }
+}
+
+em{
+    font-style: normal;
+}
+
+h2 {
+    font-family: 'noto-bold';
+    font-size: 2.25rem;
+    line-height: 3.063rem;
+}
+
+h2.variation {
+    font-size: 1.5rem;
+    line-height: 2.043rem;
+}
+
+h5,text{
+    font-family: 'noto-thin';
+    font-size: 1rem;
+    line-height: 1.172rem;
+}
+
+p{
+    font-family: 'noto-regular';
+    font-size: 1.125rem;
+    line-height: 1.533rem;
+}

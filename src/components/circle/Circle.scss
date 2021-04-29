@@ -1,0 +1,39 @@
+.circle{
+    &.xl{
+        height: 6.875rem;
+        width: 6.875rem;
+    }
+    &.sm{
+        height: 1.563rem;
+        width: 1.563rem;
+    }
+    &.bg{
+        height: 4.063rem;
+        width: 4.063rem;
+    }
+    border-radius: 50%;
+}
+
+.red{
+    background-color: var(--third);
+}
+
+.violet{
+    background-color: var(--secondary);
+}
+
+.blue{
+    background-color: var(--primary);
+}
+
+.red-medium{
+    background-color: var(--third-light);
+}
+
+.violet-medium{
+    background-color: var(--secondary-light);
+}
+
+.blue-medium{
+    background-color: var(--primary-light);
+}

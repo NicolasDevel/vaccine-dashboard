@@ -1,0 +1,25 @@
+.container-cl{
+    width: 21.625rem;
+    margin-top: 3rem;
+    margin-left: 1.875rem;
+    .item{
+        display: flex;
+        padding: 2.125rem 0;
+        &.border-bottom{
+            border-bottom : 1px solid var(--line);
+        }
+        .margin-left{
+            margin-left: 1.625rem;
+            em{
+                height: min-content;
+            }
+            .value{
+                font-size: 1.813rem;
+            }
+            .size-letter{
+                font-size: 1.813rem;
+            }
+        }
+        
+    }
+}

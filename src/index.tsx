@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './redux/configureStore';
+
+import Home from './pages/home/Home';
 import reportWebVitals from './reportWebVitals';
 
+//Theme variable
+import './theme/main.scss';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+            <Home />
+        </PersistGate>
+    </Provider>,
+
   document.getElementById('root')
 );
 
