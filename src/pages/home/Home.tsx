@@ -26,7 +26,6 @@ class Home extends React.Component<Props> {
         ]
     }
 
-
     componentDidMount() {
         this.props.getVaccinateCountry();
     }
@@ -143,7 +142,9 @@ class Home extends React.Component<Props> {
                     </div>
                     <div className="sections right">
                         <div className="Conclusion">
-                            <Title text={`Faltan 1000000 dias para llegar al 70% de la poblacion colombiana vacunada`} stylesText={"textTItle"} color={'red'}/>
+                            {data && <Title
+                                text={`Faltan ${Math.ceil((this.TOTAL_POPULATION - data[data.length-1].people_fully_vaccinated!) / (data[data.length-1].people_fully_vaccinated!/data.length))} dias para llegar al 70% de la poblacion colombiana vacunada`}
+                                stylesText={"textTItle"} color={'red'}/>}
                         </div>
 
                         <div className="triptico">
@@ -175,14 +176,8 @@ class Home extends React.Component<Props> {
                                 }} title={'PC'} subTItle={`${PC.toFixed(2).toString()}%`}/>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </>
 
