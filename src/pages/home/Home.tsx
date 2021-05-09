@@ -26,7 +26,6 @@ class Home extends React.Component<Props> {
         ]
     }
 
-
     componentDidMount() {
         this.props.getVaccinateCountry();
     }
@@ -175,14 +174,8 @@ class Home extends React.Component<Props> {
                                 }} title={'PC'} subTItle={`${PC.toFixed(2).toString()}%`}/>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
-
-
             </div>
         </>
 
